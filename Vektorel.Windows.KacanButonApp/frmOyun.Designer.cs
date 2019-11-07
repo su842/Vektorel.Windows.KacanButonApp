@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnKac = new System.Windows.Forms.Button();
+            this.tmrSure = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnKac
@@ -42,6 +44,11 @@
             this.btnKac.Click += new System.EventHandler(this.BtnKac_Click);
             this.btnKac.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button1_MouseMove);
             // 
+            // tmrSure
+            // 
+            this.tmrSure.Interval = 1000;
+            this.tmrSure.Tick += new System.EventHandler(this.TmrSure_Tick);
+            // 
             // frmOyun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -50,6 +57,7 @@
             this.Controls.Add(this.btnKac);
             this.Name = "frmOyun";
             this.Text = "frmOyun";
+            this.Load += new System.EventHandler(this.FrmOyun_Load);
             this.ResumeLayout(false);
 
         }
@@ -57,5 +65,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnKac;
+        private System.Windows.Forms.Timer tmrSure;
     }
 }
